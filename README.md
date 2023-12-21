@@ -1,4 +1,5 @@
 # Azure-SOC and Honeynet with Live Traffic
+<img src="https://github.com/jacksontyren/Azure-SOC-/assets/121649532/de424de9-81e9-4019-85b4-e857271330f5" height="80%" width="80%">
 <h2>Overview</h2>
 The main goal of this lab is to deliberately subject our environment to potential threats, enabling us to observe and analyze the activities of malicious actors on the internet. I constructed a miniature honeynet in Azure, gathered log data from diverse sources into a Log Analytics workspace, and utilized Microsoft Sentinel to generate attack maps, initiate alerts, and manage incidents. After assessing security metrics in the unsecured environment for 24 hours, implementing security controls to fortify the environment, and measuring metrics for an additional 24 hours, the results are presented below. The metrics we will display include:
 <br></br>
@@ -26,16 +27,9 @@ The main goal of this lab is to deliberately subject our environment to potentia
 <br />
 
 # Architecture Before Hardening / Security Controls
-
-<p align="center">
-<strong>Step 1:</strong> Open the terminal and enter the command to open Wireshark.<br/>
-sudo wireshark <br/>
- <img src="https://github.com/jacksontyren/Azure-SOC-/assets/121649532/de424de9-81e9-4019-85b4-e857271330f5" height="80%" width="80%">
-<br />
+<img src="https://github.com/jacksontyren/Azure-SOC-/assets/121649532/4d57b6f4-0489-41ac-9b43-8d339703ac57" height="80%" width="80%"/>
 <br />
 <strong>Step 2:</strong> Select the interface you would like to use to capture packets on. I used the eth0 interface.  <br/>
-<img src="https://github.com/jacksontyren/jacksontyren/assets/121649532/9547b5b0-88dd-4d38-9400-99868cac02d9" height="80%" width="80%"/>
-<br />
 <br />
 
 <img src="https://github.com/jacksontyren/jacksontyren/assets/121649532/7236b0cf-5ebb-4a74-9028-a5cb91f0a05d" height="80%" width="80%" />
