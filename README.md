@@ -29,7 +29,7 @@ The main goal of this lab is to deliberately subject our environment to potentia
 # Architecture Before Hardening / Security Controls
 <img src="https://github.com/jacksontyren/Azure-SOC-/assets/121649532/4d57b6f4-0489-41ac-9b43-8d339703ac57" height="80%" width="80%"/>
 <br />
-<p>This architecture represents the insecure state of the system prior to implementing security controls. It was completely exposed to the internet, with both Network Security Groups and built-in firewalls set to allow all traffic. Access control rules were created to allow unrestricted communication between network endpoints. In addition, all other resources were deployed with public endpoints visible to the internet, without using any Private Endpoints
+<p>This system architecture depicts the vulnerable condition of the system before the implementation of security measures. At this stage, the system was entirely accessible from the internet, and both Network Security Groups and inherent firewalls were configured to permit all types of traffic. Access control rules were established, facilitating unrestricted communication among network endpoints. Moreover, all remaining resources were deployed with publicly visible endpoints to the internet as well.
 </p>
   <br/>
 <br />
