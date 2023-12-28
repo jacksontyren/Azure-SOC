@@ -29,7 +29,9 @@ The main goal of this lab is to deliberately subject our environment to potentia
 # Architecture Before Hardening / Security Controls
 <img src="https://github.com/jacksontyren/Azure-SOC-/assets/121649532/4d57b6f4-0489-41ac-9b43-8d339703ac57" height="80%" width="80%"/>
 <br />
-<strong>Step 2:</strong> Select the interface you would like to use to capture packets on. I used the eth0 interface.  <br/>
+<p>This architecture represents the insecure state of the system prior to implementing security controls. It was completely exposed to the internet, with both Network Security Groups and built-in firewalls set to allow all traffic. Access control rules were created to allow unrestricted communication between network endpoints. In addition, all other resources were deployed with public endpoints visible to the internet, without using any Private Endpoints
+</p>
+  <br/>
 <br />
 
 <img src="https://github.com/jacksontyren/jacksontyren/assets/121649532/7236b0cf-5ebb-4a74-9028-a5cb91f0a05d" height="80%" width="80%" />
