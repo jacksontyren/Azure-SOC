@@ -29,13 +29,20 @@ The main goal of this lab is to deliberately subject our environment to potentia
 # Architecture Before Hardening / Security Controls
 <img src="https://github.com/jacksontyren/Azure-SOC-/assets/121649532/4d57b6f4-0489-41ac-9b43-8d339703ac57" height="80%" width="80%"/>
 <br />
-<p>This system architecture depicts the vulnerable condition of the system before the implementation of security measures. At this stage, the system was entirely accessible from the internet, and both Network Security Groups and inherent firewalls were configured to permit all types of traffic. Access control rules were established, facilitating unrestricted communication among network endpoints. Moreover, all remaining resources were deployed with publicly visible endpoints to the internet as well.
+<p>This system architecture depicts the vulnerable condition of the system before the implementation of security measures. At this stage, the system was entirely accessible from the internet, and both Network Security Groups and inherent firewalls were configured to permit all types of traffic. Access control rules were established, facilitating unrestricted communication among network endpoints. Moreover, all remaining resources were deployed with publicly visible endpoints to the internet as well. These resources included Azure Key Vault, Microsoft SQL Server, Azure Blob Storage, and Azure Entra ID (formerly Active Directory).
 </p>
   <br/>
 <br />
 
-<img src="https://github.com/jacksontyren/jacksontyren/assets/121649532/7236b0cf-5ebb-4a74-9028-a5cb91f0a05d" height="80%" width="80%" />
+# Attack Maps Before Hardening / Security Controls
+<li><strong>This attack map demonstrates the consequences of leaving the Network Security Group (NSG) open.</strong></li>
+<img src="https://github.com/jacksontyren/Azure-SOC-/assets/121649532/40cffde9-041d-4d0a-86f7-04fe8e2edb09" />
 <br />
+<br></br>
+<li><strong>This attack map showcases RDP and SMB failures against the Window machine.</strong></li>
+<img src="https://github.com/jacksontyren/Azure-SOC-/assets/121649532/8d25a2a7-990d-4beb-8a11-436adbdc2077" />
+<br />
+
  <p align="center">On the main screen we can see that the application has begun listening on the network. The top section is used to display a list of the packets captured. These packets are displayed as a table. Information about each packet is displayed here, such as the packet number, packet source and destination, the time captured, and the packet’s protocol. </br>
 <p align="center">
 <strong>Step 3:</strong> Open Firefox and visit the following site:
