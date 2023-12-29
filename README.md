@@ -35,14 +35,28 @@ The main goal of this lab is to deliberately subject our environment to potentia
 <br />
 
 # Attack Maps Before Hardening / Security Controls
-<li><strong>This attack map demonstrates the consequences of leaving the Network Security Group (NSG) open.</strong></li>
-<img src="https://github.com/jacksontyren/Azure-SOC-/assets/121649532/40cffde9-041d-4d0a-86f7-04fe8e2edb09" />
-<br />
-<br></br>
-<li><strong>This attack map showcases RDP and SMB failures against the Window machine.</strong></li>
-<img src="https://github.com/jacksontyren/Azure-SOC-/assets/121649532/8d25a2a7-990d-4beb-8a11-436adbdc2077" />
+<li><strong>This attack map showcases the consequences of leaving the Network Security Group (NSG) open.</strong></li>
+<img src="https://github.com/jacksontyren/Azure-SOC-/assets/121649532/40cffde9-041d-4d0a-86f7-04fe8e2edb09" height="80%" width="80%"/>
 <br />
 
+<br></br>
+<li><strong>This attack map showcases RDP and SMB failures against the Window machine.</strong></li>
+<img src="https://github.com/jacksontyren/Azure-SOC-/assets/121649532/8d25a2a7-990d-4beb-8a11-436adbdc2077" height="80%" width="80%" />
+<br/>
+
+<br></br>
+<li><strong>This attack map showcases failures against the Microsoft SQL Server in the Windows VM.</strong></li>
+<img src="https://github.com/jacksontyren/Azure-SOC-/assets/121649532/aa13d533-bfa8-4852-a940-be0bc9c22d9f" height="80%" width="80%"/>
+<br/>
+
+<br></br>
+<li><strong>This attack map showcases SSH login failures against the Linux VM.</strong></li>
+<img src="https://github.com/jacksontyren/Azure-SOC-/assets/121649532/04fca1e2-6606-4bcf-936b-96e35af269cd" height="80%" width="80%"/>
+<br/>
+
+# Architecture After Hardening / Security Controls
+<img src="https://github.com/jacksontyren/Azure-SOC-/assets/121649532/dfbe06d1-e267-43b9-b46c-5fe4c5f31694" height="80%" width="80%"/>
+<br/>
  <p align="center">On the main screen we can see that the application has begun listening on the network. The top section is used to display a list of the packets captured. These packets are displayed as a table. Information about each packet is displayed here, such as the packet number, packet source and destination, the time captured, and the packet’s protocol. </br>
 <p align="center">
 <strong>Step 3:</strong> Open Firefox and visit the following site:
