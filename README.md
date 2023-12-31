@@ -57,11 +57,17 @@ The main goal of this lab is to deliberately subject our environment to potentia
 # Architecture After Hardening / Security Controls
 <img src="https://github.com/jacksontyren/Azure-SOC-/assets/121649532/dfbe06d1-e267-43b9-b46c-5fe4c5f31694" height="80%" width="80%"/>
 <br/>
- <p align="center">On the main screen we can see that the application has begun listening on the network. The top section is used to display a list of the packets captured. These packets are displayed as a table. Information about each packet is displayed here, such as the packet number, packet source and destination, the time captured, and the packet’s protocol. </br>
+ <p>In the "AFTER" stage, I implemented a series of hardening measures and security controls to improve the environment's overall security posture. These improvements included:
+
+<li>Network Security Groups (NSGs): I hardened the NSGs by blocking all inbound and outbound traffic, with the sole exception of my own public IP address. This ensured that only authorized traffic from a trusted source was allowed to access the virtual machines. </li>
+
+<li>Built-in Firewalls: I configured the built-in firewalls on the virtual machines to restrict access and protect the resources from unauthorized connections. This step involved fine-tuning the firewall rules based on the specific requirements of each VM, thereby minimizing the potential attack surface.</li>
+
+<li>Private Endpoints: To enhance the security of other Azure resources, I replaced the public endpoints with Private Endpoints. This ensured that access to sensitive resources, such as storage accounts and databases, was limited to the virtual network and not exposed to the public internet. As a result, these resources were protected from unauthorized access and potential attacks.</li>
+
+By comparing the security metrics before and after implementing these hardening measures and security controls, I was able to demonstrate the effectiveness of each step in improving the overall security posture of the Azure environment. </br>
 <p align="center">
-<strong>Step 3:</strong> Open Firefox and visit the following site:
-http://testphp.vulnweb.com/login.php.
-This is a login page. We notice the lock with the red line at the top left of the page, indicating that this page is communicating through HTTP (port 80). HTTP does not encrypt data coming through like its secure counterpart HTTPS (port 443).<br/>
+<br/>
 <img src="https://github.com/jacksontyren/jacksontyren/assets/121649532/87685577-7103-4384-81da-7bc4da51b50d" height="80%" width="80%"/>
 <br />
 <br />
