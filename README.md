@@ -30,6 +30,8 @@ The main goal of this lab is to deliberately subject our environment to potentia
 <img src="https://github.com/jacksontyren/Azure-SOC-/assets/121649532/4d57b6f4-0489-41ac-9b43-8d339703ac57" height="80%" width="80%"/>
 <br />
 <p>This system architecture depicts the vulnerable condition of the system before the implementation of security measures. At this stage, the system was entirely accessible from the internet, and both Network Security Groups and inherent firewalls were configured to permit all types of traffic. Access control rules were established, facilitating unrestricted communication among network endpoints. Moreover, all remaining resources were deployed with publicly visible endpoints to the internet as well. These resources included Azure Key Vault, Microsoft SQL Server, Azure Blob Storage, and Azure Entra ID (formerly Active Directory).
+  <br></br>
+  By configuring diagnostic settings, audit logs, and appropriate data connectors, the logs from these resources were aggregated and sent to both Microsoft Sentinel and the Log Analytics workspace. This enabled the monitoring and analysis of security events, forming the basis for alerting, incident response, and the implementation of security controls guided by NIST SP 800-53.
 </p>
   <br/>
 <br />
@@ -63,23 +65,68 @@ The main goal of this lab is to deliberately subject our environment to potentia
 
 <li>Built-in Firewalls: I configured the built-in firewalls on the virtual machines to restrict access and protect the resources from unauthorized connections. This step involved fine-tuning the firewall rules based on the specific requirements of each VM, thereby minimizing the potential attack surface.</li>
 
-<li>Private Endpoints: To enhance the security of other Azure resources, I replaced the public endpoints with Private Endpoints. This ensured that access to sensitive resources, such as storage accounts and databases, was limited to the virtual network and not exposed to the public internet. As a result, these resources were protected from unauthorized access and potential attacks.</li>
-
+<li>Private Endpoints: To enhance the security of other Azure resources, I replaced the public endpoints with Private Endpoints. This ensured that access to sensitive resources, such as storage accounts and databases, was limited to the virtual network and not exposed to the public internet. As a result, these resources were protected from unauthorized access and potential attacks.</li><br>
 By comparing the security metrics before and after implementing these hardening measures and security controls, I was able to demonstrate the effectiveness of each step in improving the overall security posture of the Azure environment. </br>
-<p align="center">
-<br/>
-<img src="https://github.com/jacksontyren/jacksontyren/assets/121649532/87685577-7103-4384-81da-7bc4da51b50d" height="80%" width="80%"/>
+
+# Metrics Before Hardening / Security Controls
+<table>
+  <tr>
+    <th>Metric</th>
+    <th>Count</th>
+  <tr>
+    <td>Security Events (Windows VMs)</td>
+    <td>26038</td>
+  </tr>
+  <tr>
+    <td>Syslog (Linux VMs)</td>
+    <td>4764</td>
+  </tr>
+  <tr>
+    <td>SecurityAlert (Microsoft Defender for Cloud)</td>
+    <td>9</td>
+  </tr>
+  <tr>
+    <td>Security Incident (Sentinel Incidents)</td>
+    <td>207</td>
+  </tr>
+  <tr>
+    <td>NSG Inbound Malicious Flows Allowed</td>
+    <td>4732</td>
+  </tr>
+</table>
+
+# Metrics After Hardening / Security Controls
+<table>
+  <tr>
+    <th>Metric</th>
+    <th>Count</th>
+  <tr>
+    <td>Security Events (Windows VMs)</td>
+    <td>9757</td>
+  </tr>
+  <tr>
+    <td>Syslog (Linux VMs)</td>
+    <td>1</td>
+  </tr>
+  <tr>
+    <td>SecurityAlert (Microsoft Defender for Cloud)</td>
+    <td>0</td>
+  </tr>
+  <tr>
+    <td>Security Incident (Sentinel Incidents)</td>
+    <td>0</td>
+  </tr>
+  <tr>
+    <td>NSG Inbound Malicious Flows Allowed</td>
+    <td>0</td>
+  </tr>
+</table>
+
+# Utilizing NIST SP 800-61: Computer Security Incident Handling Guide
+<p>For each attack and simulated attacks I practiced incident response following NIST SP 800-61 Rev 2.
+<img src="https://github.com/jacksontyren/jacksontyren/assets/121649532/5885529b-4118-428e-b4f5-2abdef207334" height="80%" width="80%"/>
 <br />
 <br />
-Enter a random username and password into this form and click login. Once this is done, return to Wireshark.  <br/>
-<img src="https://github.com/jacksontyren/jacksontyren/assets/121649532/b421162a-2808-4960-97f3-0653edf5dfbc" height="80%" width="80%"/>
-<br />
-<br />
-<strong>Step 4:</strong> Click the stop button to end the packet capture. We can see that there is many more packets of data available for analysis. On the top in the filter tab enter "http" to filter for only HTTP requests.  <br/>
-<img src="https://github.com/jacksontyren/jacksontyren/assets/121649532/c043656f-9a53-4b34-9bc1-373113396b04" height="80%" width="80%"/>
-<br />
-<br />
-<strong>Step 5:</strong> Look for the packet with POST included in the info section of the first pane (1). Once you find it, select this packet. POST is an HTTP method used to send data to a web server for processing by a resource. In this case, this is when credentials were entered and the login button was clicked.
-In the second pane under the tab called Hypertext Transfer Protocol, when it is clicked the login information is displayed that was entered on the vulnerable website (2). <br/>
-<img src="https://github.com/jacksontyren/jacksontyren/assets/121649532/335f92a8-a7ad-460e-bba8-7887ef8e00d7" height="80%" width="80%"/>
-</p>
+  
+  # Conclusion
+<p>In this project, a concise honeynet was established in Microsoft Azure, integrating log sources into a Log Analytics workspace. Security controls, guided by NIST SP 800-53, were systematically applied to fortify the environment. Microsoft Sentinel played a pivotal role in triggering alerts and generating incidents based on ingested logs. To simulate incident response and remediation, NIST SP 800-61 was employed, guiding the remediation steps for incidents identified by Microsoft Sentinel. Metrics were initially measured in the insecure environment, then reevaluated after implementing security measures, showcasing a substantial reduction in security events and incidents, emphasizing the effectiveness of the applied security controls in safeguarding the environment.  <br/></p>
